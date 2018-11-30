@@ -1,3 +1,19 @@
+
+local disable_sounds = minetest.settings:get_bool("shields_disable_sounds")
+
+local function play_sound_effect(player, name)
+	if not disable_sounds and player then
+		local pos = player:getpos()
+		if pos then
+			minetest.sound_play(name, {
+				pos = pos,
+				max_hear_distance = 10,
+				gain = 0.5,
+			})
+		end
+	end
+end
+
 armor:register_armor("moderator_armor:helmet", {
 	description = "Moderator Helmet",
 	inventory_image = "moderator_armor_inv_helmet.png",
