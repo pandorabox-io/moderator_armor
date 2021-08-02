@@ -1,0 +1,2 @@
+# Privilege that allows getting and wearing moderator armor.
+moderator_armor_priv (Moderator armor privilege) string ban
